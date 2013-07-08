@@ -1,0 +1,17 @@
+<div class="hero-unit">
+<h1>This is a User </h1>
+    <ul>
+      <li><%= image_tag(@user.image)%></li>
+      <li><%= @user.username %></li>
+      <li><%= @user.status %></li>
+      <li><%= @user.age %></li>
+      <li><%= @user.gender%></li>
+       <li><%= @user.location %></li>
+
+
+   <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-success' %>
+
+  <%= link_to 'Delete', @user, :method => :delete, :class => 'btn btn-danger' %>
+
+    </ul>
+    </div>

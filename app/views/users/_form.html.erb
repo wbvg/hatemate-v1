@@ -1,0 +1,26 @@
+<div class="hero-unit">
+<%= form_for @user do |f| %>
+  <%= f.label :username %><br/>
+  <%= f.text_field :username %><br/>
+
+  <%= f.label :image %><br/>
+  <%= f.text_field :image %> <br/>
+
+  <%= f.label :status %><br/>
+  <%= f.select :status, options_for_select([['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]) %>
+
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender, options_for_select([['Female'], ['Male']]) %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+
+  <%= f.submit :class => "btn btn-primary btn-large"  %>
+  <% end %>
+
+</div>
+
