@@ -1,0 +1,65 @@
+Original_simple form
+
+
+<div class="hero-unit">
+<h2>Sign up</h2>
+
+<%= simple_form_for (resource, :as => resource_name, :url => registration_path(resource_name), @user, :html => { :multipart => true } do |form| %>) do |f| %>
+
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :avatar %>
+<% end %>
+
+
+
+  <%= simple_form_for @user, defaults: { input_html: { class: 'default_class' },:url => users_path, :html => { :multipart => true }} do |f| %>
+
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :password, input_html: { minlength: 6 } %>
+  <%= f.check_box :remember_me %> <br><%= f.label :remember_me %>
+  <%= f.input :username, input_html: { class: 'special'}%>
+    <%#= f.file_field :avatar %>
+
+
+  <%#= f.input :status, :collection => ['Single', 'In Relationship', 'On the Prowl','Desperate', 'DTF!','One eye open','One eye open','Potetial cheater','Open to possibilities','Runaway Princess','Heart Broken','Playa', 'In Happy Relationship'], :include_blank => false  %>
+
+   <%#= f.input :age, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: false,
+                              order: [:day, :month, :year], :include_blank => false %>
+
+    <%= f.input :location %>
+
+  <%= f.button :submit  %>
+<% end %>
+
+
+<%= render "devise/shared/links" %>
+
+<!--   <!%= f.button :submit { class: "btn btn-primary btn-large"}  %>
+
+
+</div>
+
+
+
+
+
+
+

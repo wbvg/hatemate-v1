@@ -1,26 +1,25 @@
 <div class="hero-unit">
-<%= form_for @user do |f| %>
-  <%= f.label :username %><br/>
-  <%= f.text_field :username %><br/>
-
-  <%= f.label :image %><br/>
-  <%= f.text_field :image %> <br/>
-
-  <%= f.label :status %><br/>
-  <%= f.select :status, options_for_select([['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]) %>
-
-    <%= f.label :age %>
-    <%= f.text_field :age %>
-
-  <%= f.label :gender %>
-  <%= f.select :gender, options_for_select([['Female'], ['Male']]) %>
-
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+ <%= simple_form_for @user, defaults: { input_html: { class: 'default_class' }, :url => users_path, :html => { :method => :put }} do |f| %>
 
 
-  <%= f.submit :class => "btn btn-primary btn-large"  %>
-  <% end %>
+
+  <%= f.input :username, input_html: { class: 'special'}, placeholder: 'Create a Username' %>
+   <!%= f.file_field :avatar %>
+
+  <%= f.input :status, :collection => ['Single', 'In Relationship', 'On the Prowl','Desperate', 'DTF!','One eye open','One eye open','Potetial cheater','Open to possibilities','Runaway Princess','Heart Broken','Playa', 'In Happy Relationship'], :include_blank => false  %>
+
+   <%= f.input :age, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: false,
+                              order: [:day, :month, :year], :include_blank => false %>
+
+    <%= f.input :location %>
+
+  <%= f.button :submit, :class => "btn btn-primary btn-large" %>
+<% end %>
 
 </div>
 
+
+<!-- , defaults: { input_html: { class: 'default_class' },:url => users_path, :html => { :multipart => true }}
+
+ -->

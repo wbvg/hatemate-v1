@@ -7,5 +7,13 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+
+# Set up original columns from Original User
+  attr_accessible :username, :status, :age, :location, :gender, :image
+
+# ImageMagick/paperclip Avatar
+  attr_accessible :avatar
+  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+
+
 end
