@@ -4,21 +4,23 @@ class HatesController < ApplicationController
     end
 
     def new
-    @hate = current_user.hates.new
+    @hate = Hate.new
+    # redirect_to(root_path)
+    # current_user.hates.
     end
 
     def create
     @hate = current_user.hates.create(params[:hate])
-    redirect_to(hate)
+    redirect_to(root_path)
     end
 
-    def show
-        @hate = Hate.find(params[:id])
+    # def show
+    # #     @hate = Hate.find(params[:id])
 
-    end
+    # end
 
     def edit
-        @hate = Hate.find(params[:id])
+        @hate = current_user.hate.find(params[:id])
     end
 
     def update
@@ -28,13 +30,13 @@ class HatesController < ApplicationController
     end
 
     def destroy
-        if current_user == hateauthor
-            then destroy
-        else
-            they can't do it.
-        #select the current users hate you are referring too here
-        #destoy it from their hates ie:
-        current_use
+ # if current_user == hateauthor
+ #            then destroy
+ #        else
+ #            they can't do it.
+ #        #select the current users hate you are referring too here
+ #        #destoy it from their hates ie:
+ #        current_use
 
 
 

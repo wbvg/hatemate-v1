@@ -8,7 +8,7 @@ root :to => 'hates#index'
 # end
 
 
-  resources :users, :hates, :ratings, :members
+  resources :users, :hates, :ratings, :about
 
 
 

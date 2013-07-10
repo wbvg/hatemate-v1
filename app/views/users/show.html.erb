@@ -4,7 +4,7 @@
                 <%= image_tag @user.avatar.url %>
               </div>
               <div class="span6">
-              <h1><%= @user.username %></h1>
+              <h1><%= link_to(@user.username, @user) %></h1>
               </div>
  </div>
 
@@ -27,8 +27,20 @@
 </div>
 
 
+<% @user.hates.each do |hate| %>
+    <ul>
+      <li><%= link_to(hate.users.first.username, hate.users.first ) %></li>
+      <li><%= image_tag(hate.users.first.avatar)  %></li>
+      <li><%= hate.category %></li>
+      <li><%= hate.post %></li>
+      <li><%= hate.hate_rate %></li>
+    </ul>
+<% end %>
+
 <!--container -->
 </div>
+
+
 
 
 

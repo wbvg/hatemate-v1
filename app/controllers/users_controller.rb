@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
 def show
         @user = User.find(params[:id])
+        # @user = current_user.hate.find(params[:id])
+        # redirect_to(current_user_path(params[:id]))
     end
 
     def edit
