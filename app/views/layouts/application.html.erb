@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hate Mate</title>
+    <title>Hate Mate™</title>
       <%= stylesheet_link_tag    "application", :media => "all" %>
        <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
@@ -36,11 +36,9 @@
   </head>
 
   <body>
-
-
-
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
+
         <div class="container">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
@@ -55,16 +53,19 @@
 
 
 
-              <li class="active"><a href="/">Home</a></li>
+              <li><%= link_to "Home", root_path %></li>
               <li> <%= link_to "Become a Hater", new_user_registration_path %> </li>
-              <li><a href="/hates/new">Create a Hate</a></li>
+
+                  <% if user_signed_in? %>
+                   <li> <%= link_to 'Create a Hate', new_hate_path %> </li>
+                    <% end %>
 
               <% flash.each do |name,msg| %>
                         <% content_tag(:div, msg, class: "alert alert-#{name}") %>
                         <% end %>
 
                   <% if user_signed_in? %>
-                    <%= link_to 'My Profile', edit_user_registration_path %> |
+                    <li><%= link_to 'My Profile', edit_user_registration_path %> </li>
                     <% end %>
 
               <li class="dropdown">
@@ -88,17 +89,31 @@
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <form class="navbar-form pull-left">
+  <input type="text" class="span2">
+  <button type="submit" class="btn btn-warning">Search</button>
+</form>
 
 
 <% else %>
   <%= link_to "Sign up", new_user_registration_path %> |
   <%= link_to "Login", new_user_session_path %>
+
+  <div class="search_box">
+  <form class="navbar-form pull-left">
+  <input type="text" class="span2">
+  <button type="submit" class="btn btn-warning">Search</button>
+</form>
+</div>
+
 <% end %>
 
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
+
+
 
     <div class="container">
 
@@ -107,32 +122,22 @@
 <%= yield %>
 
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
+      <!-- Main fluffy call to action -->
 
-
-      <!-- Example row of columns -->
       <div class="row">
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+        <div class="span7">
+          <h2>Hate Mate™ </h2>
+            <h3>Hate to find Love.</h3>
+          <p>If you hate something we are pretty sure you will fall in love with someone who hates the things you hate. So lets start hating online dating! Who knoews, love could be hiding right around the corner</p>
+<%= link_to "Become a Hater", new_user_registration_path, :class => "btn btn-warning btn-large" %>
+
         </div>
       </div>
 
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; MJ & WBvG 2013</p>
       </footer>
 
     </div> <!-- /container -->

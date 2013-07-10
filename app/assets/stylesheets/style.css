@@ -15,6 +15,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 
 }
 
+
+
 div.hero-unite {
   padding: 30px;
   margin-bottom: 20px;
@@ -28,22 +30,35 @@ div.hero-unite {
 
 
 
+.burning{
+  color: white;         /* A light text makes a nice bright flame source */
+  background: black;    /* A dark background gives some contrast */
+  letter-spacing: 3em;  /* Big text shows off the effect best */
+  font-weight: bold;
+}
+
+div.search_box {
+  display: inline;
+  padding: 4px;
+  text-align: right;
+
+}
+
+
+
 ul li {
 
   list-style: none;
 }
 
 img {
-  width:100px;
-  height: 100px;
+  width:130px;
+  height: 130px;
+  border: 7px solid #333 ;
   border-radius: 100%;
+
 }
 
-img.user {
-  width:230px;
-  height: 230px;
-  border-radius: 100%;
-}
 
 div.float_left{
 clear: left;
@@ -67,22 +82,80 @@ display: inline-block;
 float: left;
 padding-left: 20px;
 border-radius: 0%;
+border:none;
 }
 
-.home-unit {
-  padding: 20px;
-  margin-bottom: 30px;
+.nav { padding: 6px;}
+
+.home_cat {
+padding-top: 80px;
+}
+
+div.topper {
+  padding: 10px;
+  text-align: left;
+  height: 100px;
+}
+
+div.home-unit {
+  margin: 0px 0 10px 0;
+  padding: 10px 20px 0px 40px;
+  height: 490px;
   font-size: 18px;
   font-weight: 200;
   line-height: 24px;
-  color: inherit;
-  background: url(/images/haterz.png);
+  color: #fff;
+  background: url(/images/haterz.png) repeat-y right center;
+
 
 /*  background-color: #eeeeee;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;*/
 }
+
+div.user_hates {
+  padding: 10px 20px 5px 40px;
+  width: 26%;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  color: #fff;
+  display: inline-block;
+
+
+background: #ffa73d; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #ffa73d 7%, #ff7c00 37%, #e02104 94%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(7%,#ffa73d), color-stop(37%,#ff7c00), color-stop(94%,#e02104)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* IE10+ */
+background: linear-gradient(135deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa73d', endColorstr='#e02104',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
+li  {
+  padding: 2px;
+}
+
+
+
+
+
+.home-unit h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+
+
 
 .hero-unit h1 {
   margin-bottom: 0;
@@ -95,6 +168,22 @@ border-radius: 0%;
 .hero-unit li {
   line-height: 30px;
 }
+
+div.hate_row {
+  width: 100%;
+  padding: 20px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  color: inherit;
+  background-color: #eeeeee;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
 
 
 .hero-unit {

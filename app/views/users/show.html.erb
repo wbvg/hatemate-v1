@@ -1,44 +1,58 @@
 <div class="hero-unite">
-  <div class="row">
+      <div class="row">
               <div class="span6">
                 <%= image_tag @user.avatar.url %>
               </div>
               <div class="span6">
               <h1><%= link_to(@user.username, @user) %></h1>
               </div>
- </div>
+      </div>
 
-<div class="row">
-  <div class="float_left">
-    <div class="span6">
+      <div class="row">
+          <div class="float_left">
+            <div class="span6">
               <ul>
-                    <li><%= @user.status %></li>
-                    <li><%= @user.age %></li>
-                    <li><%= @user.gender%></li>
-                    <li><%= @user.location %></li>
+                  <li><%= @user.status %></li>
+                  <li><%= @user.age %></li>
+                  <li><%= @user.gender%></li>
+                  <li><%= @user.location %></li>
+
+                    <% if user_signed_in? %>
                     <li><%= link_to 'Edit profile', edit_user_registration_path,  :class => 'btn btn-success' %></li>
                     <li><%= link_to 'Get your hate on', new_hate_path, :class => 'btn btn-danger' %></li>
-                </ul>
-            </div>
+                    <% end %>
+              </ul>
           </div>
+        </div>
+
+
    <div class="float_right">
       <div class="span6"> <%= @user.intro %></div>
-         </div>
+   </div>
 </div>
 
 
-<% @user.hates.each do |hate| %>
-    <ul>
-      <li><%= link_to(hate.users.first.username, hate.users.first ) %></li>
-      <li><%= image_tag(hate.users.first.avatar)  %></li>
-      <li><%= hate.category %></li>
-      <li><%= hate.post %></li>
-      <li><%= hate.hate_rate %></li>
-    </ul>
-<% end %>
 
-<!--container -->
-</div>
+      <% @user.hates.each do |hate| %>
+      <div class="user_hates">
+          <ul>
+            <li><%= image_tag(hate.users.first.avatar)  %></li>
+            <li> <button class="btn btn-large dropdown-toggle"><%= link_to(hate.users.first.username, hate.users.first ) %></button></li>
+            <li><%= hate.category %></li>
+            <li><i>"<%= hate.post %>"</i></li>
+          <li><h4>My Hates</h4></li>
+            <li><%= hate.hate_rate %></li>
+          </ul>
+          <hr>
+        </div>
+      <% end %>
+
+
+   </div>
+
+
+
+
 
 
 

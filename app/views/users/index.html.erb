@@ -1,10 +1,9 @@
-
- <div class="home-unit">
+<div class="home-unit">
         <h1>Welcome to Hate Mate</h1>
         <p>We hope you have some fun, hate a little and find love.</p>
-        <p><a href="/users/new" class="btn btn-primary btn-large">Become a Hater</a></p>
-      </div>
+        <%= link_to "Become a Hater", new_user_registration_path, :class => "btn btn-primary btn-large" %>
 
+      </div>
 
       <% @users.each do |user| %>
 <div class="hero-unit">
@@ -15,6 +14,7 @@
       <li><%= user.location %></li>
       <li class="float_right"><%= user.intro %></li>
     </ul>
+    <hr/>
  </div>
 <% end %>
 

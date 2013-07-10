@@ -1,19 +1,67 @@
-<div class="hero-unit">
-<h1>Hates</h1>
+
+ <div class="home-unit">
+
+  <h1 class="burnin">Welcome to <br>Hate Mate™</h1>
+        <p>We hope you are rested and ready for<br>some fun, a little hate and find love.</p>
+        <!-- <p><a href="/users/new" class="btn btn-primary btn-large">Become a Hater</a></p> -->
+        <%= link_to "Become a Hater", new_user_registration_path, :class => "btn btn-primary btn-large" %>
+        <%= link_to "Find a Hater", root_path, :class => "btn btn-warning btn-large" %>
+
+        <h2 class="home_cat">Categories of Hating Online Dating</h2>
+            <div class="row">
+                <div class="span12">
+                    <%= link_to "First Kiss", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "On Street Pick Ups", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Tongue", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Condoms", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "First Dates", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Pubic Hair", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Slut People", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Sleep Over", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "The Morning After", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Consequences", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Conversations", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Lust", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Liars", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Profile Pictures", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Speed Dating", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Online Dating", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Dark Alleyways", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Drunk People", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Clothing", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Perfume", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Spelling", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Profile Descriptions", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "Drunks", new_user_registration_path, :class => "btn btn-danger" %>
+                    <%= link_to "International People", new_user_registration_path, :class => "btn btn-danger" %>
+
+<h1>Top Hates</h1>
+                </div>
+            </div>
+</div>
+
+
+
 
 <% @hates.each do |hate| %>
+<div class="hate_row">
     <ul>
       <li>
+        <button class="btn btn-large dropdown-toggle">
 
-        <%= link_to(hate.users.first.username, hate.users.first ) %></li>
+        <%= link_to(hate.users.first.username, hate.users.first ) %></button>
+</li>
+
       <li><%= image_tag(hate.users.first.avatar)  %></li>
       <li><%= hate.category %></li>
-      <li><%= hate.post %></li>
+      <li><i>"<%= hate.post %>"</i></li>
+      <li><h4>My Hates</h4></li>
       <li><%= hate.hate_rate %></li>
     </ul>
+    <hr>
+    </div>
 <% end %>
 
 
 
 
-</div>

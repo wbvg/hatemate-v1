@@ -1,23 +1,15 @@
 <div class="hero-unit">
-THIS IS EDIT
 
+<h1> Create a Hate</h2>
 <%= form_for @hate do |f| %>
-
-  <%= f.label :category %><br/>
-  <%= f.select :category, options_for_select([['First Kiss'], ['On Street Pick ups'], ['Tongue'], ['Condoms'], ['First Dates'], ['Pubic Hair'], ['Slut People'], ['Sleep over'], ['The morning after'], ['Consequences'], ['Conversation'], ['Lust'], ['Losers'], ['Fake Profiles'], ['Pick up lines'], ['Turn offs'], ['Liars'], ['Profile pictures'], ['Speed Dating'], ['Online Dating'], ['Breath'], ['On Street Pick ups'], ['Dark Alleyways'], ['Drunk People'], ['Perfume'],['Clothing'],['Spelling'],['Profile Descriptions'],['Drunks'],['International People']]) %>
-
-  <%= f.label :post %> <p>(Please limit to 255 Characters)</p><br/>
-  <%= f.text_field :post %>
-
-
-<%= f.label :hate_rate%><br/>
-
-  <%= f.select :hate_rate, options_for_select([[1],[2],[3],[4],[5] ]) %>
-
-
-
-
-
+<%= f.label :category %><br/>
+<%= f.select :category, options_for_select([['First Kiss'], ['On Street Pick ups'], ['Tongue'], ['Condoms'], ['First Dates'], ['Pubic Hair'], ['Slut People'], ['Sleep over'], ['The morning after'], ['Consequences'], ['Conversation'], ['Lust'], ['Losers'], ['Fake Profiles'], ['Pick up lines'], ['Turn offs'], ['Liars'], ['Profile pictures'], ['Speed Dating'], ['Online Dating'], ['Breath'], ['On Street Pick ups'], ['Dark Alleyways'], ['Drunk People'], ['Perfume'],['Clothing'],['Spelling'],['Profile Descriptions'],['Drunks'],['International People']]) %>
+  <h4>
+  <%= f.label :post %> Tell Us What You Hate
+</h4>
+  <%= f.text_area :post,  :rows=>5 %>
+  <%= f.label :hate_rate%><br/>
+  <%= f.select :hate_rate, options_for_select([ [1],[2],[3],[4],[5] ]) %>
   <%= f.submit :class => "btn btn-primary btn-large" %>
   <% end %>
 
