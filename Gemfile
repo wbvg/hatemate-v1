@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
-gem "country_select", "~> 1.2.0"
+
 gem "paperclip", "~> 3.0"
 
 

@@ -1,33 +1,20 @@
 class HatesController < ApplicationController
     def index
       @hates = Hate.all
-     end
+    end
 
     def new
-        @hate = Hate.new
-
+    @hate = current_user.hates.new
     end
 
     def create
-        hate = Hate.create(params[:hate])
-
-#     def
-#         when @hate_rate1 = Hate.find(params[:hate_rate])
-#         end
-
-#         @hate_rate1 = Hate.find(params[:hate_rate])
-#         @hate_rate2 = Hate.find(params[:hate_rate])
-#         @hate_rate3 = Hate.find(params[:hate_rate])
-#         @hate_rate4 = Hate.find(params[:hate_rate])
-#         @hate_rate5 = Hate.find(params[:hate_rate])
-
-
-# ['Slight Hate'],['Hate'],['Really Hate'],['Super Hate'],['Extremly Hate'] ]) %>
-        redirect_to(hate)
+    @hate = current_user.hates.create(params[:hate])
+    redirect_to(hate)
     end
 
     def show
         @hate = Hate.find(params[:id])
+
     end
 
     def edit
@@ -41,6 +28,16 @@ class HatesController < ApplicationController
     end
 
     def destroy
+        if current_user == hateauthor
+            then destroy
+        else
+            they can't do it.
+        #select the current users hate you are referring too here
+        #destoy it from their hates ie:
+        current_use
+
+
+
         hate = Hate.find(params[:id])
         hate.destroy
         redirect_to(hates_path)

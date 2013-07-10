@@ -11,15 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709075528) do
+ActiveRecord::Schema.define(:version => 20130710090457) do
 
   create_table "hates", :force => true do |t|
-    t.integer  "user_id"
     t.string   "category"
     t.text     "post"
     t.integer  "hate_rate"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "hates_users", :id => false, :force => true do |t|
+    t.integer "hate_id"
+    t.integer "user_id"
   end
 
   create_table "ratings", :force => true do |t|
@@ -54,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20130709075528) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "intro"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

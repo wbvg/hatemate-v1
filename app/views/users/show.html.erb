@@ -1,21 +1,39 @@
-<div class="hero-unit">
-<h1>This is a User </h1>
-    <ul>
+<div class="hero-unite">
+  <div class="row">
+              <div class="span6">
+                <%= image_tag @user.avatar.url %>
+              </div>
+              <div class="span6">
+              <h1><%= @user.username %></h1>
+              </div>
+ </div>
 
-      <li>
+<div class="row">
+  <div class="float_left">
+    <div class="span6">
+              <ul>
+                    <li><%= @user.status %></li>
+                    <li><%= @user.age %></li>
+                    <li><%= @user.gender%></li>
+                    <li><%= @user.location %></li>
+                    <li><%= link_to 'Edit profile', edit_user_registration_path,  :class => 'btn btn-success' %></li>
+                    <li><%= link_to 'Get your hate on', new_hate_path, :class => 'btn btn-danger' %></li>
+                </ul>
+            </div>
+          </div>
+   <div class="float_right">
+      <div class="span6"> <%= @user.intro %></div>
+         </div>
+</div>
 
-  <%= image_tag @user.avatar.url %>
-        <!%= image_tag(@user.image)%></li>
-      <li><%= @user.username %></li>
-      <li><%= @user.status %></li>
-      <li><%= @user.age %></li>
-      <li><%= @user.gender%></li>
-       <li><%= @user.location %></li>
+
+<!--container -->
+</div>
 
 
-   <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-success' %>
 
-  <%= link_to 'Delete', @user, :method => :delete, :class => 'btn btn-danger' %>
 
-    </ul>
-    </div>
+
+
+
+

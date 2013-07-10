@@ -1,21 +1,17 @@
 <div class="hero-unit">
-<h1>The Top Hates</h1>
+<h1>Hates</h1>
 
-<%= @hates %>
-<!% @hates.each do |hate| %>
-
-<!%= link_to(hate.user.username, hate) %>
-
-<!% end %>
-
-<!% @hates.each do |hate| %>
+<% @hates.each do |hate| %>
     <ul>
-      <li><!%= link_to(hate.user_id.username, hate) %></li>
-        <li><!%= image_tag(hate.user.image)%></li>
-      <li><!%= hate.category %></li>
-      <li><!%= hate.post %></li>
-      <li><!%= hate.hate_rate %></li>
+      <li><%= hate.users.first.username %></li>
+      <li><%= image_tag(hate.users.first.avatar)  %></li>
+      <li><%= hate.category %></li>
+      <li><%= hate.post %></li>
+      <li><%= hate.hate_rate %></li>
     </ul>
+<% end %>
 
-<!% end %>
+
+
+
 </div>

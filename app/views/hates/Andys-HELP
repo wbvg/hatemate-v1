@@ -1,0 +1,17 @@
+1. create migration to remove user_id from hates table
+2. create migration to create hates_users table
+3. In hates controller create the hates via the current_user
+
+
+
+eg
+
+
+def new
+@hate = current_user.hates.new
+end
+
+
+def create
+@hate = current_user.hates.create(params[:hate])
+
