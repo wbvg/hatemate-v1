@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require_tree .
-*= require 'bootstrap/css/bootstrap.css'
-*= require 'bootstrap/css/bootstrap-responsive.css'
-*= require 'style.css'
+ *= require 'bootstrap/css/bootstrap'
+ *= require 'bootstrap/css/bootstrap-responsive'
+ *= require 'style.css'
  */
 

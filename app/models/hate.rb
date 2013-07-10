@@ -14,5 +14,6 @@
 class Hate < ActiveRecord::Base
   attr_accessible :user_id, :category, :post, :hate_rate
   belongs_to :user
+  validates_presence_of :user_id, :value => true
   has_many :ratings
 end

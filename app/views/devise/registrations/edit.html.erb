@@ -1,8 +1,8 @@
 <div class="hero-unit">
 
-  <h2>Set Up <%= resource_name.to_s.humanize %></h2>
-
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
@@ -11,6 +11,25 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+
+ <%= f.label :username %><br/>
+  <%= f.text_field :username %><br/>
+
+<%= f.file_field :avatar %>
+
+
+  <%= f.label :status %><br/>
+  <%= f.select :status, options_for_select([['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]) %>
+
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender, options_for_select([['Female'], ['Male']]) %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
 
 
 

@@ -1,7 +1,11 @@
 <div class="hero-unit">
 <h1>This is a User </h1>
     <ul>
-      <li><%= image_tag(@user.image)%></li>
+
+      <li>
+
+  <%= image_tag @user.avatar.url %>
+        <!%= image_tag(@user.image)%></li>
       <li><%= @user.username %></li>
       <li><%= @user.status %></li>
       <li><%= @user.age %></li>

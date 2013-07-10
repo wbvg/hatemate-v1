@@ -9,7 +9,8 @@
       <% @users.each do |user| %>
 <div class="hero-unit">
     <ul>
-      <li><%= image_tag(user.image) %></li>
+      <li>  <%= image_tag user.avatar.url  %>
+        <!%= image_tag @user.avatar.url(:thumb) %></li>
       <li><%= link_to(user.username, user) %></li>
       <li><%= user.status %></li>
       <li><%= user.location %></li>

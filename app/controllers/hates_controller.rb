@@ -5,12 +5,11 @@ class HatesController < ApplicationController
 
     def new
         @hate = Hate.new
+
     end
 
     def create
         hate = Hate.create(params[:hate])
-
-
 
 #     def
 #         when @hate_rate1 = Hate.find(params[:hate_rate])
@@ -27,14 +26,9 @@ class HatesController < ApplicationController
         redirect_to(hate)
     end
 
-
-
-
-def show
+    def show
         @hate = Hate.find(params[:id])
     end
-
-
 
     def edit
         @hate = Hate.find(params[:id])
@@ -52,10 +46,4 @@ def show
         redirect_to(hates_path)
     end
 
-
-
-
-
-
-
-   end
+end

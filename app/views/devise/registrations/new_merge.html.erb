@@ -1,6 +1,9 @@
 <div class="hero-unit">
 <h2>Sign up</h2>
 
+<!%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
   <%= devise_error_messages! %>
@@ -31,8 +34,14 @@
   <%= f.label :gender %>
   <%= f.select :gender, options_for_select([['Female'], ['Male']]) %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+  <!%= f.label :location %>
+  <!%= f.text_field :location %>
+
+<%= f.label :age %>
+<%= f.select :age, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: false,
+                              order: [:day, :month, :year], :include_blank => false %>
+
 
 
   <div><%= f.submit "Sign up" %></div>

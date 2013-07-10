@@ -4,7 +4,7 @@ Original_simple form
 <div class="hero-unit">
 <h2>Sign up</h2>
 
-<%= simple_form_for (resource, :as => resource_name, :url => registration_path(resource_name), @user, :html => { :multipart => true } do |form| %>) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name) :html => { :multipart => true } do |form| %>) do |f| %>
 
   <%= devise_error_messages! %>
 
