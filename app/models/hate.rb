@@ -3,16 +3,17 @@
 # Table name: hates
 #
 #  id         :integer          not null, primary key
+#  user_id    :integer
 #  category   :string(255)
 #  post       :text
-#  hate_rate  :integer
+#  hate_rate  :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 class Hate < ActiveRecord::Base
-  attr_accessible :category, :post, :hate_rate
-  has_and_belongs_to_many :users
+  attr_accessible :category , :post, :hate_rate, :user_id
+  belongs_to :user
   has_many :ratings
 
   # ImageMagick/paperclip Avatar
@@ -22,5 +23,9 @@ class Hate < ActiveRecord::Base
         :path => ":rails_root/public/system/:attachment/:id/:style/:filename" ,
 
         :url => "/system/:attachment/:id/:style/:filename"
+
+validates :category, :presence => true
+validates :post, :presence => true
+validates :hate_rate, :presence => true
 
 end

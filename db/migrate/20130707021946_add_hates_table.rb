@@ -4,7 +4,7 @@ class AddHatesTable < ActiveRecord::Migration
       t.integer :user_id
       t.string :category
       t.text :post
-      t.integer :hate_rate
+      t.string :hate_rate
       t.timestamps
     end
   end

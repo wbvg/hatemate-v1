@@ -1,13 +1,13 @@
-<div class="hero-unit">
+<div class="signup_unit">
 <h2>Sign up</h2>
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.label :email %><br />
+  <%= f.label :email %>
   <%= f.email_field :email, placeholder: 'user@domain.com', :autofocus => true  %>
 
-  <%= f.label :password %><br />
+  <%= f.label :password %>
   <%= f.password_field :password, placeholder: 'Min 6 Characters'  %>
 
   <%= f.label :password_confirmation %>
@@ -15,18 +15,19 @@
 
   <%= f.label :username %>
   <%= f.text_field :username %>
-<br/>
+<h5>Profile Pic </h5>
+<p>(Please consider using your face if you want to fall in love)</p>
   <%= f.file_field :avatar %>
 
 
   <%= f.label :status %>
-  <%= f.select :status, options_for_select([[''],['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]), :include_blank => false %>
+  <%= f.select :status, options_for_select([['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]), :include_blank => true %>
 
     <%= f.label :age %>
     <%= f.text_field :age %>
 
   <%= f.label :gender %>
-  <%= f.select :gender, options_for_select([[''],['Female'], ['Male']]), :include_blank => false %>
+  <%= f.select :gender, options_for_select([['Female'], ['Male']]), :include_blank => true %>
 
   <%= f.label :location %>
   <%= f.text_field :location %>
@@ -35,8 +36,10 @@
 <%= f.text_area :intro,  :rows=>5 %><br/>
  <%= f.submit "Sign up", :class => "btn btn-primary btn-large" %>
 <% end %>
+<!--
+<button class="btn btn-large dropdown-toggle"> -->
+<%= render "devise/shared/links" %><!-- </button> -->
 
-<%= render "devise/shared/links" %>
 </div>
 
 

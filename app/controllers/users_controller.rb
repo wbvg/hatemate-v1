@@ -28,10 +28,10 @@ def show
         redirect_to(user)
     end
 
-    def destroy
-        user = User.find(params[:id])
-        user.destroy
-        redirect_to(users_path)
-    end
+    # def destroy
+    #     hate = Hate.find(params[:id])
+    #     hate.destroy
+    #     redirect_to(hates_path)
+    # end
 
 end

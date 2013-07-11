@@ -15,5 +15,10 @@
 class Rating < ActiveRecord::Base
   attr_accessible :hate_id, :user_id, :hate_up, :hate_down
   belongs_to :hate
+
+  def self.total_count
+  where(:hate_up => 1).count - where(:hate_down => 1).count
+  end
 end
+
 

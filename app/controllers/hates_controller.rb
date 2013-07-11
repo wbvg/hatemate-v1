@@ -1,6 +1,8 @@
 class HatesController < ApplicationController
     def index
+      @users = User.all
       @hates = Hate.all
+      @rating = Rating.new
     end
 
     def new
@@ -30,16 +32,6 @@ class HatesController < ApplicationController
     end
 
     def destroy
- # if current_user == hateauthor
- #            then destroy
- #        else
- #            they can't do it.
- #        #select the current users hate you are referring too here
- #        #destoy it from their hates ie:
- #        current_use
-
-
-
         hate = Hate.find(params[:id])
         hate.destroy
         redirect_to(hates_path)

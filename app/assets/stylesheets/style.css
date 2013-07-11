@@ -15,6 +15,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 
 }
 
+/* ========= Header Nav =========== */
+
+div.nav-signup-menu {
+  padding: 5px;
+  color: #444;
+}
+
+a:hover {
+  opacity: 0.7;
+}
 
 
 div.hero-unite {
@@ -27,29 +37,56 @@ div.hero-unite {
           border-radius: 4px;
 }
 
-
-
-
 .burning{
   color: white;         /* A light text makes a nice bright flame source */
-  background: black;    /* A dark background gives some contrast */
+  /* background: black;    A dark background gives some contrast */
   letter-spacing: 3em;  /* Big text shows off the effect best */
   font-weight: bold;
 }
 
 div.search_box {
-  display: inline;
-  padding: 4px;
+  display: block;
+  padding: 5px;
   text-align: right;
+  float: right;
 
 }
 
 
+form{
+  margin-bottom: 5px !important;
+}
 
-ul li {
 
+
+/* Buttons  ========== */
+
+footer{
+  padding: 30px;
+}
+
+.btn_up {
+  padding: 4px;
+  height:100px;
+  width: 500px;
+  display: block;
+  position: relative;
+  color: #fff;
+  background: url(/images/btn_hate_up.png);
+  border: none;
+
+}
+
+.row {
+  margin: auto;
+}
+
+li {
   list-style: none;
+  text-align: center;
 }
+
+
 
 img {
   width:130px;
@@ -61,10 +98,10 @@ img {
 
 
 div.float_left{
-clear: left;
-width: 25%;
-float: left;
-padding-right: 20px;
+  clear: left;
+  width: 25%;
+  float: left;
+  padding-right: 20px;
 }
 
 
@@ -76,19 +113,30 @@ div.float_right{
 }
 
 img.logo {
-width: 90px;
-height: 50px;
-display: inline-block;
-float: left;
-padding-left: 20px;
-border-radius: 0%;
-border:none;
+  width: 90px;
+  height: 50px;
+  display: inline-block;
+  float: left;
+  padding-left: 20px;
+  border-radius: 0%;
+  border:none;
 }
 
-.nav { padding: 6px;}
+img.about-img {
+  width: 757px;
+  height: 297px;
+  position: relative;
+  padding-left: 20px;
+  border-radius: 0%;
+  border:none;
+}
+
+.nav {
+  padding: 6px;
+}
 
 .home_cat {
-padding-top: 80px;
+  padding-top: 54px;
 }
 
 div.topper {
@@ -99,14 +147,13 @@ div.topper {
 
 div.home-unit {
   margin: 0px 0 10px 0;
-  padding: 10px 20px 0px 40px;
-  height: 490px;
+  padding: 20px;
+  height: 460px;
   font-size: 18px;
   font-weight: 200;
   line-height: 24px;
   color: #fff;
   background: url(/images/haterz.png) repeat-y right center;
-
 
 /*  background-color: #eeeeee;
   -webkit-border-radius: 6px;
@@ -123,6 +170,7 @@ div.user_hates {
   line-height: 24px;
   color: #fff;
   display: inline-block;
+  height: 330px;
 
 
 background: #ffa73d; /* Old browsers */
@@ -136,6 +184,58 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa73d', end
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+}
+
+div.hates_show {
+  padding: 20px;
+  width: 26%;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  color: #fff;
+  display: inline-block;
+  height: 600px;
+  text-align: centre !important;
+
+
+background: #ffa73d; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #ffa73d 7%, #ff7c00 37%, #e02104 94%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(7%,#ffa73d), color-stop(37%,#ff7c00), color-stop(94%,#e02104)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* IE10+ */
+background: linear-gradient(135deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa73d', endColorstr='#e02104',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
+
+
+div.signup_unit {
+  padding: 24px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 24px;
+  color: #333;
+  display: inline-block;
+
+
+background: #ffa73d; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #ffa73d 7%, #ff7c00 37%, #e02104 94%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(7%,#ffa73d), color-stop(37%,#ff7c00), color-stop(94%,#e02104)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* IE10+ */
+background: linear-gradient(135deg,  #ffa73d 7%,#ff7c00 37%,#e02104 94%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa73d', endColorstr='#e02104',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
 }
 
 

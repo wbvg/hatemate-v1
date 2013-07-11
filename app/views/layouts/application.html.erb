@@ -50,9 +50,6 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
 
-
-
-
               <li><%= link_to "Home", root_path %></li>
               <li> <%= link_to "Become a Hater", new_user_registration_path %> </li>
 
@@ -81,51 +78,52 @@
                 </ul>
               </li>
             </ul>
-<% flash.each do |name,msg| %>
-      <% content_tag(:div, msg, class: "alert alert-#{name}") %>
-      <% end %>
 
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <form class="navbar-form pull-left">
-  <input type="text" class="span2">
-  <button type="submit" class="btn btn-warning">Search</button>
-</form>
+            <div class="nav-signup-menu">
+              <% flash.each do |name,msg| %>
+                    <% content_tag(:div, msg, class: "alert alert-#{name}") %>
+                    <% end %>
 
+              <% if user_signed_in? %>
+                Logged in as <strong><%= current_user.email %></strong>.<br>
+                <%= link_to 'Edit profile', edit_user_registration_path %> |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                <!-- Use later for search ======
 
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
+                <form class="navbar-form pull-left">
+                <input type="text" class="span2">
+                <button type="submit" class="btn btn-warning">Search</button>
+              </form>
+              -->
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path %> |
+                <%= link_to "Login", new_user_session_path %>
+            </div>
 
-  <div class="search_box">
-  <form class="navbar-form pull-left">
-  <input type="text" class="span2">
-  <button type="submit" class="btn btn-warning">Search</button>
-</form>
-</div>
-
-<% end %>
+              <% end %>
+              </div>
 
           </div><!--/.nav-collapse -->
         </div>
       </div>
-    </div>
+</div>
 
 
 
-    <div class="container">
 
 
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
 
 
+
+</div>
+    <!-- /container -->
       <!-- Main fluffy call to action -->
-
+<div class="container">
       <div class="row">
-        <div class="span7">
+        <div class="span3">
           <h2>Hate Mate™ </h2>
             <h3>Hate to find Love.</h3>
           <p>If you hate something we are pretty sure you will fall in love with someone who hates the things you hate. So lets start hating online dating! Who knoews, love could be hiding right around the corner</p>
@@ -134,15 +132,15 @@
         </div>
       </div>
 
-      <hr>
 
       <footer>
         <p>&copy; MJ & WBvG 2013</p>
       </footer>
 
-    </div> <!-- /container -->
 
 
 
+</div>
+    <!-- /container -->
   </body>
 </html>

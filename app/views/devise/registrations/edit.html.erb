@@ -14,18 +14,21 @@
 
  <%= f.label :username %>
   <%= f.text_field :username %><br/>
-
+<br/>
+<h5>Profile Pic </h5>
+<p>(Please consider using your face if you want to fall in love)</p>
 <%= f.file_field :avatar %>
 
 
-  <%= f.label :status %><br/>
-  <%= f.select :status, options_for_select([['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]) %>
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select([['Single'], ['In Relationship'],['On the Prowl'], ['Desperate'],['One eye open'],['Potetial cheater'],['Open to possibilities'],['Runaway Princess'], ['Heart Brokern'],['Playa'],['In Happy Relationship']]), :include_blank => true %>
 
     <%= f.label :age %>
     <%= f.text_field :age %>
 
   <%= f.label :gender %>
-  <%= f.select :gender, options_for_select([['Female'], ['Male']]) %>
+  <%= f.select :gender, options_for_select([['Female'], ['Male']]), :include_blank => true %>
+
 
   <%= f.label :location %>
   <%= f.text_field :location %>
