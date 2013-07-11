@@ -13,11 +13,9 @@ class UsersController < ApplicationController
         redirect_to(user)
     end
 
-def show
+    def show
         @rating = Rating.new
         @user = User.find(params[:id])
-        # @user = current_user.hate.find(params[:id])
-        # redirect_to(current_user_path(params[:id]))
     end
 
     def edit

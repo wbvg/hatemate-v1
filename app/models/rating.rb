@@ -17,7 +17,7 @@ class Rating < ActiveRecord::Base
   belongs_to :hate
 
   def self.total_count
-  where(:hate_up => 1).count - where(:hate_down => 1).count
+    where(:hate_up => 1).count - where(:hate_down => 1).total_count
   end
 end
 

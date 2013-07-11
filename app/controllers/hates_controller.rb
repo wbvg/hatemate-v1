@@ -6,20 +6,13 @@ class HatesController < ApplicationController
     end
 
     def new
-    @hate = Hate.new
-    # redirect_to(root_path)
-    # current_user.hates.
+        @hate = Hate.new
     end
 
     def create
-    @hate = current_user.hates.create(params[:hate])
-    redirect_to(root_path)
+        @hate = current_user.hates.create(params[:hate])
+        redirect_to(root_path)
     end
-
-    # def show
-    # #     @hate = Hate.find(params[:id])
-
-    # end
 
     def edit
         @hate = current_user.hate.find(params[:id])

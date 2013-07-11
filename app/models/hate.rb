@@ -24,11 +24,11 @@ class Hate < ActiveRecord::Base
 
         :url => "/system/:attachment/:id/:style/:filename"
 
-validates :category, :presence => true
-validates :post, :presence => true
-validates :hate_rate, :presence => true
+  validates :category, :presence => true
+  validates :post, :presence => true
+  validates :hate_rate, :presence => true
 
-attr_accessible :post
-validates_length_of :post, :maximum => 254,
-    :too_long => "{{count}} characters is the maximum allowed"
+  attr_accessible :post
+  validates_length_of :post, :maximum => 254,
+      :too_long => "{{count}} characters is the maximum allowed"
 end

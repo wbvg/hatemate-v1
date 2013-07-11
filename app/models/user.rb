@@ -51,9 +51,9 @@ class User < ActiveRecord::Base
         :url => "/system/:attachment/:id/:style/:filename"
 
 #Set up intro string to users
-attr_accessible :intro
-validates_length_of :intro, :maximum => 254,
-    :too_long => "{{count}} characters is the maximum allowed"
+  attr_accessible :intro
+  validates_length_of :intro, :maximum => 254,
+      :too_long => "{{count}} characters is the maximum allowed"
 
 
 
