@@ -3,29 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Hate Mate™</title>
-      <%= stylesheet_link_tag    "application", :media => "all" %>
+        <%= stylesheet_link_tag    "application", :media => "all" %>
        <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
 
 <!--Line below is added to make app responsive on mobile devices-->
     <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
 
-    <meta name="description" content="">
+    <meta name="description" content="HateMate is an Online Dating Service which hates online dating. We want our users to fall in love through hate.">
     <meta name="author" content="Mike & Will">
-
-
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
-
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
+    [endif]-->
 
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
@@ -38,43 +29,37 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a  href="/">
-            <img src="/images/hatemate_logo.png" class="logo"></a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a  href="/"><img src="/images/hatemate_logo.png" class="logo"></a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><%= link_to "Home", root_path %></li>
+                <li> <%= link_to "Become a Hater", new_user_registration_path %> </li>
 
-              <li><%= link_to "Home", root_path %></li>
-              <li> <%= link_to "Become a Hater", new_user_registration_path %> </li>
+                  <!--Authenticate User Menu Options -->
+                  <% flash.each do |name,msg| %>
+                              <% content_tag(:div, msg, class: "alert alert-#{name}") %>
+                              <% end %>
 
-                  <% if user_signed_in? %>
-                   <li> <%= link_to 'Create a Hate', new_hate_path %> </li>
+                    <% if user_signed_in? %>
+                <li> <%= link_to 'Create a Hate', new_hate_path %> </li>
                     <% end %>
 
-              <% flash.each do |name,msg| %>
-                        <% content_tag(:div, msg, class: "alert alert-#{name}") %>
-                        <% end %>
+                    <% if user_signed_in? %>
+                <li><%= link_to 'My Profile', edit_user_registration_path %> </li>
+                      <% end %>
 
-                  <% if user_signed_in? %>
-                    <li><%= link_to 'My Profile', edit_user_registration_path %> </li>
-                    <% end %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
 
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li> <%= link_to "About Hate Mate", about_index_path %> </li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
-                  <li class="nav-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
                 </ul>
               </li>
             </ul>
@@ -88,6 +73,7 @@
                 Logged in as <strong><%= current_user.email %></strong>.<br>
                 <%= link_to 'Edit profile', edit_user_registration_path %> |
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
                 <!-- Use later for search ======
 
                 <form class="navbar-form pull-left">
@@ -102,45 +88,31 @@
 
               <% end %>
               </div>
-
           </div><!--/.nav-collapse -->
         </div>
       </div>
 </div>
 
-
-
-
-
-
 <div class="container">
   <%= yield %>
-
-
-
 </div>
-    <!-- /container -->
-      <!-- Main fluffy call to action -->
-<div class="container">
+<!-- /Main Content container -->
+
+<div class="white container">
       <div class="row">
         <div class="span3">
           <h2>Hate Mate™ </h2>
             <h3>Hate to find Love.</h3>
-          <p>If you hate something we are pretty sure you will fall in love with someone who hates the things you hate. So lets start hating online dating! Who knoews, love could be hiding right around the corner</p>
-<%= link_to "Become a Hater", new_user_registration_path, :class => "btn btn-warning btn-large" %>
-
+            <p>If you hate something we are pretty sure you will fall in love with someone who hates the things you hate. So lets start hating online dating! Who knoews, love could be hiding right around the corner</p>
+            <%= link_to "Become a Hater", new_user_registration_path, :class => "btn btn-warning btn-large" %>
+          </div>
         </div>
-      </div>
-
-
       <footer>
         <p>&copy; MJ & WBvG 2013</p>
       </footer>
+  </div>
+    <!-- /Footer Container  -->
 
-
-
-
-</div>
-    <!-- /container -->
   </body>
 </html>
+

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     def index
       @users = User.all
-    end
+      @rating = Rating.new
+     end
 
     def new
         @user = User.new
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
     end
 
 def show
+        @rating = Rating.new
         @user = User.find(params[:id])
         # @user = current_user.hate.find(params[:id])
         # redirect_to(current_user_path(params[:id]))
@@ -28,10 +30,5 @@ def show
         redirect_to(user)
     end
 
-    # def destroy
-    #     hate = Hate.find(params[:id])
-    #     hate.destroy
-    #     redirect_to(hates_path)
-    # end
 
 end
