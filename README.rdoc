@@ -1,6 +1,7 @@
 == Welcome to Hate Mate
 
 Please visit our test site and start hating on Online Dating:
+http://hatemate.herokuapp.com/
 
 == Gems
 
@@ -14,11 +15,3 @@ Thanks to Paperclip - https://github.com/thoughtbot/paperclip
 
 Thanks to jQuery Burn - http://sinetheta.github.io/burn/
 
-
-== Future Features
-
-1. Payment Gateway
-2. Trademarking
-3. Domain Hosting
-4. Category filtering
-5. Sort Highest Rated Hates
