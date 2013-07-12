@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require 'jquery.burn.js'
-
+//= require 'bootstrap-dropdown.js'
+//= require 'bootstrap-tab.js'
+//= require 'bootstrap-transition.js'
+//= require 'bootstrap-collapse.js'
 
 
