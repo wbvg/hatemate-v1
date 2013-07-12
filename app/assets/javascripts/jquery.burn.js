@@ -1,7 +1,3 @@
-$(document).ready(function() {
-    $('.burning').burn();
-});
-
 /*! jQuery Burn - v0.3.2 sinetheta.github.com/burn/ */
 (function(e){function f(a){this.burning=null;this.settings=a;
   return this}var d={a:0.3,k:0.05,w:10,wind:1,strength:1,diffusion:1,flames:[{x:0,hsla:[58,96,89,1],y:0,blur:0.1},{x:0,hsla:[51,98,76,1],y:0.02,blur:0.15},{x:0,hsla:[36,100,60,1],y:0.04,blur:0.2},{x:0,hsla:[28,91,49,1],y:0.08,blur:0.25},{x:0,hsla:[19,94,41,1],y:0.15,blur:0.3},{x:0,hsla:[15,75,34,1],y:0.2,blur:0.4},{x:0,hsla:[14,66,16,1],y:0.5,blur:0.5}]};e.fn.burn=function(a,c){var b;if(!1===a)return(b=this.data("_burn"))&&b.off(),this;if("object"===
