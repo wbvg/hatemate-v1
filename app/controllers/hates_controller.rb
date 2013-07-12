@@ -1,8 +1,8 @@
 class HatesController < ApplicationController
     def index
-      #@users = User.all
-      #@hates = Hate.all
-      #@rating = Rating.new
+      @users = User.all
+      @hates = Hate.all
+      @rating = Rating.new
     end
 
     def new
