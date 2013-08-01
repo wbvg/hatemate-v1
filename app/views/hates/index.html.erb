@@ -1,4 +1,4 @@
-<div class="home-unit">
+    <div class="home-unit">
   <h1 class="burning">Welcome to <br>Hate Mate™</h1>
         <p>We hope you are rested and ready for<br>
             some fun, a little hate and find love.</p>
@@ -45,7 +45,7 @@
 
             <% @hates.each do |hate| %>
             <div class="hates_show">
-                    <li><%= image_tag(hate.user.avatar)  %></li>
+                    <li><%= image_tag(hate.try(:user).try(:avatar))  %></li>
                     <li> <button class="btn btn-large dropdown-toggle">
                         <%= link_to(hate.user.username, hate.user ) %></button></li>
 

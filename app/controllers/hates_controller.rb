@@ -3,6 +3,7 @@ class HatesController < ApplicationController
       @users = User.all
       @hates = Hate.all
       @rating = Rating.new
+      # @tophates = hate.all.order('category.desc').limit(5)
     end
 
     def new

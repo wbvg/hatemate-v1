@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def index
-      @users = User.all
-      @rating = Rating.new
+         @users = User.all
+        @rating = Rating.new
      end
 
     def new

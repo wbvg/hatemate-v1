@@ -31,4 +31,8 @@ class Hate < ActiveRecord::Base
   attr_accessible :post
   validates_length_of :post, :maximum => 254,
       :too_long => "{{count}} characters is the maximum allowed"
+
+# self.top_hates(num)
+# all.order('cat desc').limit(num or 20)
+# end
 end
