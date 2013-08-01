@@ -14,7 +14,8 @@
 class Hate < ActiveRecord::Base
   attr_accessible :category , :post, :hate_rate, :user_id
   belongs_to :user
-  has_many :ratings
+  has_many :ratings, :dependent => :destroy
+
 
   # ImageMagick/paperclip Avatar
   attr_accessible :avatar

@@ -40,7 +40,8 @@ class User < ActiveRecord::Base
 
 # Set up original columns from Original User
   attr_accessible :username, :status, :age, :location, :gender, :image, :hate_ids
-  has_many :hates
+  has_many :hates, :dependent => :destroy
+
 
 # ImageMagick/paperclip Avatar
   attr_accessible :avatar
